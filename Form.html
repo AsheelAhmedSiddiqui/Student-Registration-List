@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body{
+
+    margin: 0;
+    padding: 0;
+    
+}
+   main{
+
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: blueviolet;
+            padding: 20px;
+        }
+        form{
+            min-height: 450px;
+            width: 400px;
+            background-color: white;
+            padding: 20px;
+            text-align: center;
+            font-family: "Poppins", sans-serif;
+        }
+        input[type="text"]{
+
+            height: 40px;
+            width: 90%;
+            border: none;
+            border-bottom: 1px solid rgb(218, 211, 211);
+            outline: none;
+            font-family: "Poppins", sans-serif;
+        }
+        input[type="email"]{
+
+height: 40px;
+width: 90%;
+border: none;
+border-bottom: 1px solid rgb(218, 211, 211);
+outline: none;
+font-family: "Poppins", sans-serif;
+}
+        button{
+
+            height: 40px;
+            width: 150px;
+            border: none;
+            cursor: pointer;
+            margin: 10px;
+            font-family: "Poppins", sans-serif;
+
+        }
+        button:hover{
+
+            background-color: rgb(174, 104, 240);
+            color: white;
+            transition: 0.5s;
+        }
+        button a{
+
+            text-decoration: none;
+           
+        }
+        button a:hover{
+
+color: white;
+
+}
+    </style>
+    
+    <main>
+      
+        <form action="#">
+
+            <h1>Registration Form</h1>
+
+            <input type="text" id="name" placeholder=" Enter Name">
+
+            <br><br>
+
+
+            <input type="text" placeholder="Father Name" id="fName">
+
+            <br><br>
+
+            <input type="email" placeholder="Enter Email " id="eMail">
+
+            <br><br>
+
+            <input type="text" placeholder="Enter Number" id="mPhone">
+
+            <br><br>
+
+<button id="btn">Submit</button>
+
+<button><a href="index.html">Go To List</a></button>
+
+<br><br>
+
+<!-- <button>Go To List</button> -->
+
+        </form>
+    </main>
+
+
+    <script>
+
+        let userName = document.getElementById('name');
+
+        let userFather = document.getElementById('fName');
+
+        let userEmail = document.getElementById('eMail');
+
+        let userNumber = document.getElementById('mPhone');
+
+        let btn = document.getElementById('btn');
+
+
+        let num = Math.round(Math.random()*(999999 - 100000 + 1)) + 100000; //Roll Number
+
+
+        
+        btn.onclick = function(){
+
+            if( userName.value =="" || userFather.value =="" || userEmail.value =="" || userNumber.value =="" ){
+
+                alert('Please Enter Data');
+
+            }else{
+                
+            localStorage.setItem('userName' , userName.value);
+
+            localStorage.setItem('userFather' , userFather.value);
+            
+            localStorage.setItem('userEmail' , userEmail.value);
+            
+            localStorage.setItem('userNumber' , userNumber.value);
+            
+            localStorage.setItem('userRoll' , num)
+            
+            }
+        
+        }
+    </script>
+</body>
+</html>
